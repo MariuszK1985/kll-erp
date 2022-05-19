@@ -55,7 +55,7 @@ function doliczTransport(&$kwoty, $transport) {
     print_r($kwoty);echo "<br>";
     $ilosc_el_tab = count($kwoty);
     $suma_kwot = array_sum($kwoty);
-    $pozycja_max = array_search(123.44, $kwoty, true);
+    $pozycja_max = array_search(max($kwoty), $kwoty, true);
     for($i=0;$i<$ilosc_el_tab;$i++) {
         $kwoty[$i] += round($transport*$kwoty[$i]/$suma_kwot,2);
     }
